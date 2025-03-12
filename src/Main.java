@@ -22,10 +22,10 @@ public class Main {
                 case 1:
                     if(submissions < ninjas.length){
                         ninjas[submissions] = submitNinja(scanner);
+                        submissions++;
                     } else{
                         System.out.println("A lista de ninjas está cheia");
                     }
-                    submissions++;
                     break;
                 case 2:
                     if(submissions > 0){
@@ -51,13 +51,18 @@ public class Main {
                         option = scanner.nextInt();
                         scanner.nextLine();
 
-                        System.out.println("Insira a nova habilidade especial");
-                        ninjas[option].habilidadeEspecial = scanner.nextLine();
+                        if(option < submissions){
+                            System.out.println("Insira a nova habilidade especial");
+                            ninjas[option].habilidadeEspecial = scanner.nextLine();
+                            System.out.println("Nova habilidade registrada para "+ ninjas[option].nome + ": "  + ninjas[option].habilidadeEspecial);
+                        } else{
+                            System.out.println("Opção inválida");
+                        }
 
-                        System.out.println("Nova habilidade registrada para "+ ninjas[option].nome + ": "  + ninjas[option].habilidadeEspecial);
                     }else{
                         System.out.println("Nenhum ninja cadastrado");
                     }
+                    break;
                 case 4:
                     System.out.println("Até mais!");
                     break;
