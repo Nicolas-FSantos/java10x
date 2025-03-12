@@ -5,7 +5,6 @@ public class Main {
         int submissions = 0;
         int option = 0;
         int maxNumberNinja = 5;
-        String textLine;
         Uchiha[] ninjas = new Uchiha[maxNumberNinja];
         Scanner scanner = new Scanner(System.in);
 
